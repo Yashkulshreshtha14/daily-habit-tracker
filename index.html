@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ed">
+  <title>Little by Little — Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Little by Little home"><span class="brand-mark">✳</span> little by little</a>
+      <span class="date-pill" id="today-label"></span>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">YOUR DAILY RESET</p>
+        <h1>Small steps.<br><span>Real change.</span></h1>
+        <p class="subtitle">Show up for the little things. They add up.</p>
+      </div>
+      <div class="progress-card" aria-live="polite">
+        <div class="progress-copy"><span>Today's progress</span><strong id="progress-text">0 / 0</strong></div>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+        <p id="progress-note">A fresh start is waiting.</p>
+      </div>
+    </section>
+
+    <section class="habits-section">
+      <div class="section-heading"><div><p class="eyebrow">YOUR ROUTINE</p><h2>Today's habits</h2></div><button class="add-button" id="add-open"><span>＋</span> Add habit</button></div>
+      <div id="habit-list" class="habit-list"></div>
+      <div id="empty-state" class="empty-state" hidden><div class="empty-icon">✳</div><h3>Make room for a good habit</h3><p>Start with one small thing you want to do more often.</p><button class="text-button" id="empty-add">Create your first habit <span>→</span></button></div>
+    </section>
+    <footer><span>Progress, not perfection.</span><button class="reset-button" id="reset-day">Reset today</button></footer>
+  </main>
+
+  <dialog id="habit-dialog">
+    <form method="dialog" id="habit-form">
+      <button class="dialog-close" aria-label="Close">×</button>
+      <p class="eyebrow">A LITTLE PROMISE</p><h2>Add a habit</h2><p class="dialog-subtitle">Keep it simple enough to start today.</p>
+      <label for="habit-name">Habit name</label><input id="habit-name" maxlength="40" placeholder="e.g. Read for 10 minutes" required>
+      <label>Choose an icon</label><div class="icon-picker" id="icon-picker"></div>
+      <div class="dialog-actions"><button type="button" class="cancel-button" id="cancel-add">Cancel</button><button class="save-button" value="save">Add habit <span>→</span></button></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
